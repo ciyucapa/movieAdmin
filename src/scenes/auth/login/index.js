@@ -1,40 +1,58 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { withFormik, Form, Field, ErrorMessage} from 'formik';
+import PropsTypes from 'prop-types';
 
 
-const Login = () => {
+const Login = (props) => {
+    const {
+        isSubmitting,
+        isValid
+    } = props
 
-    const [email, setEmail] = useState('');
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value)
-    };
-
-    const [password, setPassword] = useState("");
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value)
-    };
-
-    const style = {
-        backgroundColor: "#FF5733" 
-    };
-    const style2 = {
-        backgroundColor: "#33FFF0" 
-    };
-
-    const isEmail = () => {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-    }
 
     return(
-        <div>
-            <form>
-                    Email <input type="email" value={email} onChange={handleEmailChange} />
-                    Contraseña <input type="text" value={password} onChange={handlePasswordChange} />
-                    <button style={ email && password && isEmail() ? style2 : style }> Enviar</button>
-            </form>
-        </div>
+        <Form>
+            <div className=""> Correo <Field name="email" type="email" /></div>
+            <ErrorMessage name="email"/>
+            <div className=""> Contraseña <Field name="password" type="password" /></div>
+            <ErrorMessage name="password"/>
+            <button 
+            type="submit" 
+            className={isSubmitting || isValid ? 'color2' : 'color1'}
+            disabled={isSubmitting || !isValid} 
+            > 
+            Entrar!!!
+            </button>
+        </Form>
     );
-  
 };
 
-export default Login;
+Login.protoTypes = {
+    isSubmitting: PropsTypes.bool,
+    isValid: PropsTypes.bool
+}
+
+
+export default withFormik({
+    mapPropsToValues: () => ({
+        email: '',
+        password: ''
+    }),
+
+    validate(values) {
+        const errors = {};
+        
+            if (!values.password) {
+                errors.password = "Is Requerid!"
+            } else if (values.password.length < 5) {
+                errors.password = "Mayor a 5 caracteres!"
+            }
+
+            return errors;
+        },
+
+    handleSubmit(values, formikBag) {
+        formikBag.setSubmitting(false)
+        console.log(values);
+    },
+}) (Login);
