@@ -18,7 +18,7 @@ const Login = (props) => {
             <ErrorMessage name="password"/>
             <button 
             type="submit" 
-            className={isSubmitting || isValid ? 'color2' : 'color1'}
+            className={isSubmitting || !isValid ? 'color2' : 'color1'}
             disabled={isSubmitting || !isValid} 
             > 
             Entrar!!!
