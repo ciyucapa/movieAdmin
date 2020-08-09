@@ -1,6 +1,8 @@
 import React from 'react';
 import { withFormik, Form, Field, ErrorMessage} from 'formik';
 import PropsTypes from 'prop-types';
+import './login.css'
+
 
 
 const Login = (props) => {
@@ -12,17 +14,19 @@ const Login = (props) => {
 
     return(
         <Form>
-            <div className=""> Correo <Field name="email" type="email" /></div>
+           <div className="container">
+           <div className="input"> Correo <Field name="email" type="email" /></div>
             <ErrorMessage name="email"/>
             <div className=""> Contraseña <Field name="password" type="password" /></div>
             <ErrorMessage name="password"/>
             <button 
             type="submit" 
-            className={isSubmitting || !isValid ? 'color2' : 'color1'}
+            className={isSubmitting || !isValid ? '' : 'color2'}
             disabled={isSubmitting || !isValid} 
             > 
-            Entrar!!!
+            Registrarse
             </button>
+           </div>
         </Form>
     );
 };
@@ -30,7 +34,7 @@ const Login = (props) => {
 Login.protoTypes = {
     isSubmitting: PropsTypes.bool,
     isValid: PropsTypes.bool
-}
+};
 
 
 export default withFormik({
@@ -41,7 +45,8 @@ export default withFormik({
 
     validate(values) {
         const errors = {};
-        
+    
+
             if (!values.password) {
                 errors.password = "Is Requerid!"
             } else if (values.password.length < 5) {
