@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import LoginNew from './scenes/auth/login'
-import Register from './scenes/auth/register';
+
+import RegisterNew from './scenes/auth/register/register';
 import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Register/>
+    <RegisterNew/>
     {/*<LoginNew/>*/}  
   </React.StrictMode>,
   document.getElementById('root')

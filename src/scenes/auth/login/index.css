@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px 10px;
+
 }
 
 .container-form{
@@ -32,7 +33,6 @@
     text-align: center;
 }
 
-
 button{
     display: block;
     font-size: 1rem;
@@ -41,4 +41,11 @@ button{
     margin: 0 auto;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+}
+
+.error{
+    background: white;
+    color: red;
+    padding: 10px;
+
 }
