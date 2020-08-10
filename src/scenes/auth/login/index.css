@@ -4,37 +4,42 @@
    position: absolute;
    top: 0;
    display: flex;
-justify-content: center;
-align-items: center;
-padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
 }
 
 .container-form{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: block;
     justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     max-width: 300px;
     margin: auto;
     padding: 10px 10px;
+    text-align: center;
 }
 
 .input{
     display: block;
-    color: black;
-    flex-wrap: wrap;
-    padding: 10px 20px;
+    justify-content: center;
+    padding: 0.2rem;
+    width: 100%;
+    max-width: 250px;
+    margin: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 
 button{
     display: block;
-    background: gray;
-    color: blanchedalmond;
     font-size: 1rem;
     width: 100%;
     max-width: 100px;
     margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
