@@ -22,9 +22,10 @@ function LoginNew (props) {
                 
                     const error = {};
 
-                   if (!values.password) {
+                    if (!values.password) {
                        error.password = "Este campo es requerido"
-                    } else if (values.password.length < 5 ) { 
+                    }
+                   if (values.password.length < 5 ) {
                         error.password = "debe ser mayor a 5 digitos"
                     }
                     return error;
@@ -35,17 +36,18 @@ function LoginNew (props) {
                 }}
             >
             <Form>
-                <div className="container">
                 <div className="container-form">
+                <div className="container-form-one">
+
                 <h1>Inicio de sesion</h1>
                     <label className="title">Email
-                    <div className="input"><Field name="email" type="text" /></div>
+                    <div className="input"><Field name="email" type="text" required /></div>
                     </label>
-                    <ErrorMessage name="email"/>
+                    <ErrorMessage className="error" name="email" component="div" />
                     <label className="title">Contraseña
                     <div className="input"><Field name="password" type="password"/></div>
                     </label>
-                    <ErrorMessage name="password"/>
+                    <ErrorMessage className="error" name="password" component="div"/>
                     <button 
                         type="submit"
                         disabled={isSubmitting }
