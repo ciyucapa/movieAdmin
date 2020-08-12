@@ -1,0 +1,27 @@
+.box{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+.box-form{
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    margin-top: 10rem;
+}
+
+.input{
+    display: block;
+    padding: 10px 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.error{
+    background: white;
+    color: red;
+}

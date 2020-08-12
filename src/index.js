@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Navigation from "./navigation";
-
+import RegisterBoo from './scenes boostrap/auth boostrap/register boostrap'
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <Navigation/>
+      <RegisterBoo/>
   </React.StrictMode>,
   document.getElementById('root')
 );
