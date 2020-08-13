@@ -2,6 +2,7 @@ import React from 'react';
 import {Formik,Form, Field, ErrorMessage} from 'formik'
 import '../login boostrap/index.css'
 import Button from 'react-bootstrap/Button';
+import PropTypes from "prop-types";
 
 const LoginBoo = () => {
 
@@ -57,6 +58,13 @@ const LoginBoo = () => {
             </Formik>
         </div>
     )
+};
+
+LoginBoo.propTypes = {
+    email: PropTypes.string,
+    password: PropTypes.string,
+    isValid: PropTypes.bool,
+    isSubmitting: PropTypes.bool,
 };
 
 export default LoginBoo;

@@ -2,6 +2,7 @@ import React from 'react';
 import {Formik,Form, Field, ErrorMessage} from 'formik'
 import '../login boostrap/index.css'
 import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
 
 const RegisterBoo = () => {
 
@@ -44,12 +45,12 @@ const RegisterBoo = () => {
                 {({
                       errors,
                       isSubmitting,
+                      isValid
                   }) => (
                     <div className="box-form">
                         <Form>
                             <h1>Registro de Usuario</h1>
                             <label className="label" name="name">Nombres
-                                ::after ==$0
                                 <Field className="input" name="name" type="text"  />
                             </label>
                             <ErrorMessage className="error" name="name" component='div' />
@@ -71,7 +72,7 @@ const RegisterBoo = () => {
                             <ErrorMessage className="error" name='passwordConfirm' component='div' />
                             <Button
                                 type='submit'
-                                disabled={isSubmitting}
+                                disabled={isSubmitting || !isValid}
                             >Enviar
                             </Button>
                         </Form>
@@ -81,6 +82,15 @@ const RegisterBoo = () => {
             </Formik>
         </div>
     )
+};
+
+RegisterBoo.propTypes = {
+    name: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
+    password: PropTypes.string,
+    isValid: PropTypes.bool,
+    isSubmitting: PropTypes.bool,
 };
 
 export default RegisterBoo;
