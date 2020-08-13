@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import RegisterBoo from './scenes boostrap/auth boostrap/register boostrap'
+import LoginBoo from "./scenes boostrap/auth boostrap/login boostrap";
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <RegisterBoo/>
+      <LoginBoo/>
   </React.StrictMode>,
   document.getElementById('root')
 );

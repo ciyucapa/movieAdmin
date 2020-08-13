@@ -7,7 +7,6 @@ const RegisterBoo = () => {
 
     return(
         <div className="box" >
-            <h1>Registro de Usuario</h1>
             <Formik
                 initialValues={{ name: '', lastName:'', email: '', password: '', passwordConfirm:''}}
 
@@ -48,23 +47,25 @@ const RegisterBoo = () => {
                   }) => (
                     <div className="box-form">
                         <Form>
-                            <label name="name">Nombre
+                            <h1>Registro de Usuario</h1>
+                            <label className="label" name="name">Nombres
+                                ::after ==$0
                                 <Field className="input" name="name" type="text"  />
                             </label>
                             <ErrorMessage className="error" name="name" component='div' />
-                            <label name="lastName">Apellido
+                            <label className="label" name="lastName">Apellidos
                                 <Field className="input" name="lastName" type="text" />
                             </label>
                             <ErrorMessage className="error" name="lastName" component='div' />
-                            <label name='email'>Correo
+                            <label className="label" name='email'>Correo
                                 <Field className="input" name='email' type="email" />
                             </label>
                             <ErrorMessage className="error" name='email' component='div' />
-                            <label name='password'>Contraseña
+                            <label className="label" name='password'>Contraseña
                                 <Field className="input" name='password' type="password"  />
                             </label>
                             <ErrorMessage className="error" name='password' component='div' />
-                            <label name='passwordConfirm'>Repetir Contraseña
+                            <label className="label" name='passwordConfirm'>Repetir Contraseña
                                 <Field className="input" name='passwordConfirm' type="password"  />
                             </label>
                             <ErrorMessage className="error" name='passwordConfirm' component='div' />
