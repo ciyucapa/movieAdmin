@@ -1,6 +1,26 @@
-.input{
+.box-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     padding: 5px 5px;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
+
+input {
+    border: 0;
+    outline: 0;
+}
+
+    .box-input-box{
+        padding: 10px 10px;
+        display: flex;
+        height: 25px;
+        justify-content: space-around;
+        border-radius: 25px;
+        border: 1px solid #000;;
+    }
+
+    .box-input-icon{
+        width: 100%;
+        padding: 3px 3px;
+    }

@@ -1,75 +1,80 @@
 import React from 'react';
 import './index.css'
-import {Formik, Form, Field, ErrorMessage} from 'formik'
+import {Formik, Form, ErrorMessage} from 'formik'
 import PropTypes from "prop-types";
-import Button from "../../../component/commons/Button";
 import Campo from '../../../component/commons/Input';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Buttons from "../../../component/commons/Button";
 
 
 
-const Loggin = () => {
+const LoginU = () => {
 
     return(
-        <Formik
-            initialValues={{
-                email:'',
-                password:''
-            }}
+        <div className="container">
+            <Formik
+                initialValues={{
+                    email:'',
+                    password:''
+                }}
 
-            validate={values => {
-                const error = {};
+                validate={values => {
+                    const error = {};
 
-                if(!values.email){
-                    error.name ="Campo requerido"
-                }
-                if(!values.password.length > 5 ){
-                    error.name ="La contraseña debe ser mayor a 5"
-                }
+                    if(!values.email){
+                        error.email ="is Requerid"
+                    }
+                    if(values.password.length < 5){
+                        error.password ="mayor a 5"
+                    }
 
-                return error;
-            }}
+                    return error;
+                }}
 
-            onSubmit={(values, { setSubmitting }) => {
-                console.log(values)
-                setSubmitting(false);
-            }}
-        >
-            {({
-                  values,
-                  errors,
-                  isValid,
-                  isSubmitting,
-                  /* and other goodies */
-              }) => (
+                onSubmit={(values, { setSubmitting }) => {
+                    console.log(values)
+                    setSubmitting(false);
+                }}
+            >
+                {({
+                      errors,
+                      isValid,
+                      isSubmitting,
+                  }) => (
                     <Form>
-                        <Campo name="email" type="email" />
-                        <Campo name="password" type="password" />
-                        <ErrorMessage className='error' name="name" component="div"/>
-                        <Button
-                            title="sing in"
-                            disable={isSubmitting || !isValid}
-                        />
+                        <h1>Hello</h1>
+                        <h3>Sign in to your account</h3>
+                        <Campo icon1="person" name="email" type="email" />
+                        <ErrorMessage className='error' name="email" component="div"/>
+                        <Campo icon1="lock" name="password" type="password" placeholder="Password" icon2="visibility" />
+                        <ErrorMessage className='error' name="password" component="div"/>
+                        <button
+                            type="submit"
+                            disabled={isSubmitting || !isValid}
+                        >
+                            Sing in
+                        </button>
+
+                        <Buttons type="submit" title="Sign in"
+                                 disabled={isSubmitting || !isValid} />
                     </Form>
                 )}
-        </Formik>
+            </Formik>
+        </div>
     )
 };
 
-Loggin.propTypes = {
+LoginU.propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
     isValid: PropTypes.bool,
     isSubmitting: PropTypes.bool,
 };
 
-Loggin.Default = {
-    name: false,
-    lastName: false,
+LoginU.Default = {
     email: false,
     password: false,
     isSubmitting: false,
     isValid: false
 };
 
-export default Loggin;
+export default LoginU;

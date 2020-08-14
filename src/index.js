@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import LoginNew from "./scenes boostrap/auth boostrap/login new";
+import LoginU from './scenes boostrap/auth boostrap/login new'
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <LoginNew/>
+      <LoginU/>
   </React.StrictMode>,
   document.getElementById('root')
 );
