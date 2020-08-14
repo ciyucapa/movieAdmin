@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import LoginBoo from "./scenes boostrap/auth boostrap/login boostrap";
-import NavbarBoo from "./ component boostrap/common boostrap/navbar";
-import NavigationBoo from "./navigation boostrap";
+import LoginNew from "./scenes boostrap/auth boostrap/login new";
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <NavigationBoo/>
+      <LoginNew/>
   </React.StrictMode>,
   document.getElementById('root')
 );
