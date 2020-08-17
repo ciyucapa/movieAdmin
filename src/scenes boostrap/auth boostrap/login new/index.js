@@ -7,6 +7,7 @@ import Buttons from "../../../component/commons/Button";
 
 
 
+
 const LoginU = () => {
 
     return(
@@ -41,21 +42,22 @@ const LoginU = () => {
                       isSubmitting,
                   }) => (
                     <Form>
-                        <h1>Hello</h1>
-                        <h3>Sign in to your account</h3>
-                        <Campo icon1="person" name="email" type="email" />
+                        <div className="form-form">
+                            <h1>Hello</h1>
+                            <h3>Sign in to your account</h3>
+                        </div>
+                        <Campo icon1="person" name="email" type="email"/>
                         <ErrorMessage className='error' name="email" component="div"/>
-                        <Campo icon1="lock" name="password" type="password" placeholder="Password" icon2="visibility" />
+                        <Campo icon1="lock" name="password" type="password" placeholder="password" icon2="visibility" isPassword />
                         <ErrorMessage className='error' name="password" component="div"/>
-                        <button
-                            type="submit"
+                        <div className="button-butt">Forget your password?</div>
+                        <Buttons
+                            title="Sign in"
                             disabled={isSubmitting || !isValid}
-                        >
-                            Sing in
-                        </button>
-
-                        <Buttons type="submit" title="Sign in"
-                                 disabled={isSubmitting || !isValid} />
+                        />
+                        <div className="title-solo">
+                            Don´t have an account? <span>Create</span>
+                        </div>
                     </Form>
                 )}
             </Formik>

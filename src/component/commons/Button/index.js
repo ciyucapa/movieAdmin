@@ -1,24 +1,24 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import PropTypes from "prop-types";
+import './index.css'
 
 const Buttons = (props) => {
     const{
-        disabled,
         title
     }= props
 
     return(
-
-    <Button endIcon={<ArrowForwardIcon />}disabled={disabled}>
-        {title}
-    </Button>
+        <div className="box-button">
+            <button type="submit" >
+                <div className="box-button-title">{title}</div>
+                <div><ArrowForwardIcon className="box-button-icon" /></div>
+            </button>
+        </div>
     )
 };
 
 Buttons.propTypes = {
-    disabled: PropTypes.bool,
     title: PropTypes.string
 };
 
